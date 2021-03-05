@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ktds.devpro.ktsports.support.SupportMapper">
+	
+	<resultMap id ="BoardMap" type ="Board">
+	  	<association property="game" column="gameId" select="com.ktds.devpro.ktsports.main.match.GameScheduleMapper.selectGame"/>
+	  	<association property="user" column="usersNo" select="com.ktds.devpro.ktsports.user.UsersMapper.selectUser"/>
+	</resultMap>
+	
+	<select id="selectBoardList" resultMap="BoardMap">
+		SELECT
+			*
+		FROM board
+	</select>
+
+
+</mapper>

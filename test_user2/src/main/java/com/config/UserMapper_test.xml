@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.UserMapper_test">
+
+	<select id="selectUserList" resultType="String">
+		select user_id
+		from user_test
+		where user_no=1
+	</select>
+	
+	<insert id="userEnroll" parameterType="UserVo">
+        insert into board (user_id,user_password,user_tel,user_nickname,
+        user_name,user_address,user_email)
+        values ( user_test_no.nextval, #{user_id}, #{user_password}, #{user_tel},
+         #{user_nickname},  #{user_name}, #{user_address}, #{user_email})
+     </insert>
+</mapper>

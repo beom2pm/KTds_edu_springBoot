@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ktds.devpro.ktsports.user.UsersMapper">
+
+
+  	<select id="selectUserList" resultType="User">
+		select *
+		from users
+	</select>
+	
+	<select id="selectUser" resultType="User" parameterType="Integer">
+		select *
+		from users
+		where usersNo = #{sportId}
+	</select>
+	
+	<insert id="userEnroll" parameterType="User">
+        insert into users (usersNo,usersId,usersPassword,usersTel,usersNickname,
+        usersName,usersAddress,usersEmail)
+        values ( seq_users.nextval, #{usersId}, #{usersPassword}, #{usersTel},
+         #{usersNickname},  #{usersName}, #{usersAddress}, #{usersEmail})
+     </insert>
+</mapper>

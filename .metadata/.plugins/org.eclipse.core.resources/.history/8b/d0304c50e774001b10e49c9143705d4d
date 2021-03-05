@@ -1,0 +1,31 @@
+package com.example.service;
+
+import java.util.List;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+@Service
+public class UsersService_t {
+
+	@Autowired
+	private DBDao user;
+	
+	@Autowired
+	SqlSessionTemplate session;
+	
+	public List<UserVo> selectUserList() {
+		System.out.println("userservice");
+		return user.selectUserList();
+	}
+	
+	public UserVo selectUser(int userNo) {
+		return user.selectUser(userNo);
+	}
+	
+	public int userEnroll(UserVo uservo) {
+		return user.userEnroll(uservo);
+	}
+}

@@ -1,0 +1,22 @@
+#logging  --> TRACE, DEBUG,INFO,WARN,ERROR
+logging.level.root=INFO
+
+# BasicDataSource
+spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:xe
+spring.datasource.username=SCOTT
+spring.datasource.password=TIGER
+
+# mybatis
+#mybatis.mapper-locations=com/config/BoardMapper.xml, com/config/DeptMapper.xml
+#mybatis.mapper-locations=com/config/*Mapper.xml
+mybatis.mapper-locations=com/config/UsersMapper.xml
+mybatis.type-aliases-package=com.example.ktds.devpro.ktsports.user
+
+# server info(tomcat 9.0)
+server.port=8090
+server.servlet.context-path=/app
+
+# jsp
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp

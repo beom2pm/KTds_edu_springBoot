@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ktds.devpro.ktsports.main.match.GameScheduleMapper">
+
+	<resultMap id ="GameMap" type ="Game">
+<!--  		<id property="gameId" column ="gameId" /> -->
+<!-- 		<result property="gameDate" column="gameDate"/> -->
+	  	<association property="sport" column="sportId" select="com.ktds.devpro.ktsports.main.SportMapper.getSport"/>
+	</resultMap>
+
+	<select id="selectGameList" resultMap="GameMap">
+		select * from gameSchedule
+  	</select>
+  	
+  	<select id="selectGame" resultMap="GameMap" parameterType="Integer">
+		select * from gameSchedule where gameId = #{gameId}
+  	</select>
+  	
+  	
+  	
+<!--   	<delete id="deleteGameList" parameterType="integer"> -->
+<!-- 		delete -->
+<!-- 		from game -->
+<!-- 	</delete> -->
+	
+<!-- 	<insert id="insertGame" parameterType="com.ktds.devpro.ktsports.main.match.GameVoInsert"> -->
+<!-- 		insert into -->
+<!-- 		game -->
+<!-- 		values (game_seq.NEXTVAL,#{gameTime},#{leftTeam},#{rightTeam},#{score},#{stadium},#{leftTeamSrc},#{rightTeamSrc},#{sportsId}) -->
+<!--     </insert> -->
+</mapper>

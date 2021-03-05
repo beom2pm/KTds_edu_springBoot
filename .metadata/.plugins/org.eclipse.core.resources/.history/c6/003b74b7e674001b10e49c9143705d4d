@@ -1,0 +1,14 @@
+package com.example.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface UsersMapper {
+
+	public List<UserVo> selectUserList();
+	public UserVo selectUser(int userNo);
+	public int userEnroll(UserVo user);
+	//public int selectUserList();
+}

@@ -1,0 +1,27 @@
+package com.example.ktds.devpro.ktsports.user;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+@Service
+public class UsersService {
+
+	@Autowired
+	private UsersMapper user;
+	
+	public List<UserVo> selectUserList() {
+		System.out.println("userservice");
+		return user.selectUserList();
+	}
+	
+	public UserVo selectUser(int userNo) {
+		return user.selectUser(userNo);
+	}
+	
+	public int userEnroll(UserVo uservo) {
+		return user.userEnroll(uservo);
+	}
+}
