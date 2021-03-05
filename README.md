@@ -1,2 +1,2 @@
 # KTds_edu
-- sprinng boot education
+- spring boot education
